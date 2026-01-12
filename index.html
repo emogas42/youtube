@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8bcbf3e296.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="Dakirby309-Simply-Styled-YouTube.256.png" type="image/x-icon">
+    <title>Youtube</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-color: #181818;
+
+        }
+
+        nav {
+            background-color: rgb(15, 15, 15);
+            width: 100%;
+            height: 9%;
+            z-index: 4;
+            position: fixed;
+
+        }
+
+
+        .mother {
+            scroll-margin-block-start: 100px;
+
+            display: flex;
+            width: 100%;
+            height: calc(100%);
+            background-color: rgb(15, 15, 15);
+
+
+        }
+
+        .sol {
+            margin-top: 4.3%;
+            background-color: rgb(15, 15, 15);
+            width: 16%;
+            height: 91%;
+
+            position: fixed;
+            display: flex;
+            overflow: auto;
+            flex-wrap: wrap;
+
+        }
+
+        .sag {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            /* background-color: rgb(12, 70, 121); */
+            height: 100%;
+        }
+
+        .topic {
+            z-index: 2;
+            position: fixed;
+            top: 8.6%;
+            left: 16%;
+            height: 8%;
+            width: 84%;
+            
+
+            background-color: rgb(15, 15, 15);
+
+
+        }
+
+        .content {
+            /* background-color: green; */
+            width: 84%;
+            position: relative;
+            left: 16%;
+            top: 15.3%;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1 0 300px;
+            padding: 10px;
+        }
+
+        .arayuz {
+            background-color: rgb(163, 158, 151);
+            height: 71%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            scale: 0.95;
+            border-radius: 15px;
+            margin-top: 2%;
+
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            background-color: tr;
+            height: 45%;
+            width: 32%;
+            margin: 2% .5%;
+            border-radius: 15px;
+
+        }
+
+        .card::after {
+            transition: 0.3s;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: aliceblue;
+            opacity: 0;
+            scale: 0.9;
+            border-radius: 15px;
+        }
+
+        .card:hover::after {
+            scale: 1;
+            opacity: 0.1;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .lines {
+            margin: 20px;
+            width: 18px;
+            height: 17px;
+            background-image: url(main-menu.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .logo {
+            margin-top: 2px;
+            scale: .85;
+            height: 50px;
+            width: 150px;
+            background-image: url(Screenshot\ 2026-01-12\ 011710.png);
+            background-position: center;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .lines::after {
+
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background-color: aliceblue;
+            opacity: 0;
+
+            border-radius: 50%;
+        }
+
+        .lines:hover::after {
+            opacity: 0.3;
+        }
+
+        .youtube,
+        .search,
+        .create,
+        form {
+            display: flex;
+        }
+
+        .mylogo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin: 10px;
+            margin-right: 30px;
+            background-color: red;
+        }
+
+        input {
+            position: relative;
+            right: 65px;
+            border: none;
+            border-radius: 30px;
+            height: 42px;
+            width: 600px;
+            margin-top: 8px;
+            padding: 0px 13px;
+            font-weight: 400;
+            background-color: rgb(15, 15, 15);
+            border: solid rgb(41, 40, 40) 1.5px;
+        }
+
+        input.search {
+            color: white;
+        }
+
+        .notification {
+            width: 50px;
+            height: 50px;
+            background-image: url(notify.png);
+            background-position: center;
+            background-size: cover;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .created {
+            height: 35px;
+            width: 90px;
+            background-color: rgb(53, 52, 52);
+            margin-top: 10px;
+            margin-right: 20px;
+            border-radius: 20px;
+            color: white;
+            padding: 8px 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+
+        .searcher {
+            width: 50px;
+            height: 50px;
+            background-image: url(searcher.png);
+            background-position: center;
+            background-size: cover;
+            margin-top: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            position: relative;
+            right: 60px;
+        }
+
+        .mic {
+            width: 30px;
+            height: 30px;
+            background-image: url(microphone-3-64.png);
+            background-position: center;
+            background-size: cover;
+            margin-top: 15px;
+            cursor: pointer;
+            position: relative;
+            right: 40px;
+
+        }
+
+        .mic::after {
+
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background-color: aliceblue;
+            opacity: 0;
+
+            border-radius: 50%;
+        }
+
+        .mic:hover::after {
+            opacity: 0.3;
+        }
+
+        .tik {
+            height: 45px;
+            width: 95%;
+            background-color: transparent;
+            margin: 5px 1px;
+            display: inline-block;
+            border-radius: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            padding: 13px 0px;
+            display: flex;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tik::after {
+
+            content: '';
+            position: absolute;
+            top:0px;
+            left:0px;
+            right:0px;
+            bottom:0px;
+            background-color: aliceblue;
+            opacity: 0; 
+            border-radius: 14px;
+        }
+
+        .tik:hover::after {
+            opacity: 0.1;
+        }
+
+        .home,
+        .shorts {
+            padding: 0;
+        }
+
+        .homed {
+            margin-left: 20px;
+            width: 30px;
+            margin-top: 5px;
+            height: 30px;
+            background-image: url(home-5-64.png);
+            background-position: center;
+            background-size: cover;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .shortsd {
+            margin-left: 20px;
+            width: 30px;
+            margin-top: 5px;
+            height: 30px;
+            background-image: url(10417-youtube-shorts-white.png);
+            background-position: center;
+            background-size: cover;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .erlogo {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: 10px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .history {
+            width: 35px;
+            background-position: center;
+            background-size: cover;
+            background-image: url(pngaaa.com-4875945.png);
+            height: 30px;
+            margin-left: 10px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .watchlater {
+            width: 30px;
+            background-position: center;
+            background-size: cover;
+            background-image: url(timing-clock-white-icon.png);
+            height: 30px;
+            margin-left: 10px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .like {
+            width: 35px;
+            background-position: center;
+            background-size: cover;
+            background-image: url(icons8-like-96.png);
+            height: 30px;
+            margin-left: 10px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .playlist {
+            width: 35px;
+            background-position: center;
+            background-size: cover;
+            background-image: url(icons8-playlist-50.png);
+            height: 30px;
+            margin-left: 10px;
+            position: relative;
+            bottom: 5px;
+        }
+        .hr{
+            background-color: rgb(92, 90, 90);
+            height: .3px;
+            width: 100%;
+        }
+        .topic{
+            display: flex;
+            padding: 17px;
+        }
+        .top{
+            width: max-content;
+            height: 36px;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            padding: 9px 13px;
+            color: white;
+            margin: 0px 10px;
+            background-color: rgb(38, 38, 39);
+            border-radius: 6px;
+            scale: .9;
+        }
+        .erdogan{
+            background-image: url(erdogan.png);
+        }
+        .erdoganbio{
+            background-image: url(erdoganbio.png);
+
+        }
+        .bio{
+            height: 30%;
+            width: 100%;
+            background-position: 30% 40%;
+            background-size: cover
+            ;
+        }
+        .tebriza{
+            background-image: url(tebriz.png);
+            background-position: 20% 4%;
+        }
+        .tebrizbio{
+            background-image: url(tebriz.png);
+            background-position: 0% 108%;
+        }
+        .resada{
+            background-image: url(resad.png);
+            background-position: 20% 4%;
+        }
+        .resadbio{
+            background-image: url(resad.png);
+            background-position: 0% 108%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+<div class="youtube">
+            <div class="lines"></div>
+           <a href="https://www.youtube.com/"> <div class="logo"></div></a>
+       
+        </div>
+
+        <div class="search">
+            <form action="">
+                <input type="search" placeholder="Search">
+            </form>
+            <div class="searcher"></div>
+            <div class="mic"></div>
+        </div>
+        <div class="create">
+            <div class="created">+ Create</div>
+            <div class="notification"></div>
+            <div class="mylogo"></div>
+        </div>
+
+
+    </nav>
+
+    <div class="mother">
+        <div class="sol">
+            <div class="tik home">
+                <div class="homed"></div>
+                <p style="margin-top: 14px; margin-left: 20px;">Home</p>
+            </div>
+            <div class="tik shorts">
+                <div class="shortsd"></div>
+                <p style="margin-top: 14px; margin-left: 20px;">Shorts</p>
+            </div>
+            <div class="hr" style="margin-top: 10px;"></div>
+
+            <div class="tik" style="margin-top: 20px;">
+
+                <p style="margin-top: 3px; margin-left: 20px; font-weight: 600;">Subscriptions ></p>
+            </div>
+            <div class="tik">
+                <div class="erlogo" style="background-color: red;"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo" style="background-color: orange;"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo" style="background-color: blueviolet;"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo" style="background-color: blue;"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo" style="background-color: yellowgreen;"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo" style="background-color: rgb(13, 193, 248);"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="hr"></div>
+            <div class="tik">
+
+                <p style="margin-top:2px; margin-left: 20px; font-weight: 800;">You ></p>
+            </div>
+            <div class="tik">
+                <div class="history"></div>
+                <p style="margin-top:2px; margin-left: 20px;">History</p>
+            </div>
+            <div class="tik">
+                <div class="playlist"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Playlist</p>
+            </div>
+            <div class="tik">
+                <div class="watchlater"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Watch Later</p>
+            </div>
+            <div class="tik">
+                <div class="like"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Liked Videoes</p>
+            </div>
+            <div class="hr"></div>
+            <div class="tik">
+                <p style="margin-top:2px; margin-left: 20px; font-weight: 900;">Explore</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+            <div class="tik">
+                <div class="erlogo"></div>
+                <p style="margin-top:2px; margin-left: 20px;">Elmaddin</p>
+            </div>
+
+        </div>
+        <div class="sag">
+            <div class="topic">
+                <div class="top">All</div>
+                <div class="top">Gaming</div>
+                <div class="top">Music</div>
+                <div class="top">Sea of Thieves</div>
+                <div class="top">Cem Yılmaz</div>
+                <div class="top">Live</div>
+                <div class="top">Television Series</div>
+                <div class="top">Editing</div>
+                <div class="top">Rockstar Games</div>
+                <div class="top">Pop Music</div>
+            </div>
+            <div class="content">
+                <div class="card">
+                    <div class="erdogan arayuz"></div>
+                    <div class=" erdoganbio bio"></div>
+                </div>
+                    <div class="card">
+                   <div class="tebriza arayuz"></div>
+                    <div class="tebrizbio bio"></div>
+                </div>
+                <div class="card">
+                    <div class="resada arayuz"></div>
+                    <div class="resadbio bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+                <div class="card">
+                    <div class="arayuz"></div>
+                    <div class="bio"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
